@@ -1,0 +1,240 @@
+<!-- landing_two_packages.html -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ИИ‑агент + Автозагрузка для Avito — выбери пакет</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+      a {
+        text-decoration: none;
+      }
+      .bg-gradient-primary {
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        transition: 0.25s ease;
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      footer {
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header class="bg-gradient-primary text-white py-5">
+      <div class="container text-center">
+        <h1 class="display-5 fw-bold">
+          ⚙️ Запусти автопродажи на&nbsp;Avito за&nbsp;30&nbsp;минут
+        </h1>
+        <p class="lead mt-3">
+          Выбирай: быстрая автозагрузка объявлений <span class="fw-semibold">или</span>
+          полноценный <span class="fw-semibold">ИИ‑продавец</span>, который сам отвечает
+          клиентам.
+        </p>
+        <a href="#pricing" class="btn btn-light btn-lg mt-4">Выбрать пакет</a>
+      </div>
+    </header>
+
+    <!-- Why section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row gy-4 text-center">
+          <div class="col-6 col-md-3">
+            <i class="bi bi-clock-fill display-5 text-primary"></i>
+            <h5 class="mt-2">30&nbsp;минут</h5>
+            <p class="mb-0">на полный запуск</p>
+          </div>
+          <div class="col-6 col-md-3">
+            <i class="bi bi-graph-up-arrow display-5 text-primary"></i>
+            <h5 class="mt-2">+40% заявок</h5>
+            <p class="mb-0">проверено 120+ пользователями</p>
+          </div>
+          <div class="col-6 col-md-3">
+            <i class="bi bi-shield-check display-5 text-primary"></i>
+            <h5 class="mt-2">Гарантия</h5>
+            <p class="mb-0">вернём деньги, если не сработает</p>
+          </div>
+          <div class="col-6 col-md-3">
+            <i class="bi bi-people-fill display-5 text-primary"></i>
+            <h5 class="mt-2">120+ клиентов</h5>
+            <p class="mb-0">авитологи и бизнес</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Pricing -->
+<section id="pricing" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Выбери свой пакет</h2>
+    <div class="row gy-4 justify-content-center">
+      <!-- Package 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title text-center fw-bold mb-3 text-gradient">
+              Авто‑объявления
+            </h4>
+            <p class="small text-center mb-4">
+              Максимум объявлений на&nbsp;Avito без ручной работы — только автозагрузка XML.
+            </p>
+            <ul class="list-unstyled small mb-4">
+              <li class="mb-2">
+                <i class="bi bi-check2-circle text-primary"></i>
+                PDF‑гайд (5&nbsp;стр.)
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2-circle text-primary"></i>
+                Видео 10&nbsp;минут
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2-circle text-primary"></i>
+                Шаблон XML‑фида
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2-circle text-primary"></i>
+                Запуск за 30&nbsp;минут
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2-circle text-primary"></i>
+                Гарантия результата
+              </li>
+            </ul>
+            <div class="mt-auto text-center">
+              <h3 class="fw-bold mb-3">2&nbsp;990&nbsp;₽</h3>
+              <a
+                href="https://t.me/your_telegram_bot?start=auto_xml"
+                class="btn btn-primary w-100"
+              >Забрать в Telegram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-lg position-relative">
+          <span
+            class="badge bg-warning position-absolute top-0 end-0 translate-middle-y me-3 mt-3"
+          >Хит!</span>
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title text-center fw-bold mb-3 text-gradient">
+              ИИ‑продавец
+            </h4>
+            <p class="small text-center mb-4">
+              Полная автоматизация: автозагрузка + умный ИИ‑агент на&nbsp;n8n &amp; OpenAI,
+              который отвечает и&nbsp;продаёт&nbsp;за&nbsp;вас.
+            </p>
+            <ul class="list-unstyled small mb-4">
+              <li class="mb-2">
+                <i class="bi bi-check2-circle text-primary"></i>
+                Всё из «Авто‑объявления»
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2-circle text-primary"></i>
+                JSON‑workflow для&nbsp;n8n
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2-circle text-primary"></i>
+                10&nbsp;готовых промптов ChatGPT
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2-circle text-primary"></i>
+                Рост заявок до 40% за 2&nbsp;недели
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check2-circle text-primary"></i>
+                Поддержка Telegram‑чата 7&nbsp;дней
+              </li>
+            </ul>
+            <div class="mt-auto text-center">
+              <h3 class="fw-bold mb-3">4&nbsp;990&nbsp;₽</h3>
+              <a
+                href="https://t.me/your_telegram_bot?start=ai_seller"
+                class="btn btn-success w-100"
+              >Забрать в Telegram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-4">Отзывы клиентов</h2>
+        <div class="row gy-4">
+          <div class="col-12 col-md-4">
+            <blockquote class="blockquote p-4 border-start border-4 border-primary rounded">
+              <p class="mb-2">
+                «Запустил ИИ‑продавца за вечер — теперь заявок вдвое больше, а
+                менеджер больше не нужен!»
+              </p>
+              <footer class="blockquote-footer mt-2">Сергей, продавец авто‑запчастей</footer>
+            </blockquote>
+          </div>
+          <div class="col-12 col-md-4">
+            <blockquote class="blockquote p-4 border-start border-4 border-primary rounded">
+              <p class="mb-2">
+                «Брал базовый пакет — довольна! Объявления обновляются сами, а я
+                занимаюсь поставками»
+              </p>
+              <footer class="blockquote-footer mt-2">Анна, интернет‑магазин одежды</footer>
+            </blockquote>
+          </div>
+          <div class="col-12 col-md-4">
+            <blockquote class="blockquote p-4 border-start border-4 border-primary rounded">
+              <p class="mb-2">
+                «Лучшая инвестиция этого года. Через неделю апгрейдился на
+                ИИ‑продавца — продажи выросли на 38%».
+              </p>
+              <footer class="blockquote-footer mt-2">Игорь, сервис бытовой&nbsp;техники</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-5 bg-gradient-primary text-white text-center">
+      <div class="container">
+        <h3 class="fw-bold mb-3">Сделай выбор — начни зарабатывать больше уже сегодня</h3>
+        <p class="mb-4">
+          Осталось только <span class="fw-bold">7</span> гайдов по спеццене.
+          Успей до повышения!
+        </p>
+        <a href="#pricing" class="btn btn-light btn-lg">Выбрать пакет</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-dark text-light py-4">
+      <div class="container text-center">
+        <p class="mb-1">© 2025 ИИ‑агент для Avito. Все права защищены.</p>
+        <small>Сайт на Bootstrap 5. Поддержка: support@example.com</small>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
