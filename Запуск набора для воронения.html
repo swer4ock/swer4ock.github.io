@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитический отчет: Запуск продукта "ТИТАН" на маркетплейсе</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .report-header {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            border-radius: 0.3rem;
+        }
+        .card-header {
+            font-weight: bold;
+        }
+        .table-responsive {
+            max-height: 400px;
+        }
+        .unit-table td:nth-child(3) {
+            font-weight: bold;
+        }
+        .profit-value {
+             color: #198754; /* Bootstrap success color */
+        }
+        .loss-value {
+            color: #dc3545; /* Bootstrap danger color */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-5">
+
+    <div class="report-header text-center">
+        <h1>Бизнес-план: Запуск набора для воронения "ТИТАН"</h1>
+        <p class="lead">Стратегия выхода на Ozon с минимальными вложениями</p>
+        <small>Июль 2025</small>
+    </div>
+
+    <div class="card text-center mb-4 border-primary">
+        <div class="card-header bg-primary text-white">
+            Возможность в цифрах
+        </div>
+        <div class="card-body">
+            <h2 class="display-4 text-primary">+14 000 ₽</h2>
+            <p class="card-text fs-5">Такова потенциальная чистая прибыль с первой MVP-партии в 50 наборов. Это реальный, просчитанный кэш-флоу, который нужен вашему "Казначею", чтобы перестать паниковать.</p>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-7">
+            <div class="card h-100">
+                <div class="card-header">
+                    Анализ конкурентов на Ozon (Выручка за 30 дней)
+                </div>
+                <div class="card-body">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card h-100">
+                <div class="card-header">
+                    Структура рынка: Концентрация выручки
+                </div>
+                <div class="card-body">
+                    <canvas id="marketShareChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Стратегический план: "Захват плацдарма"
+        </div>
+        <div class="card-body">
+            <div class="accordion" id="strategyAccordion">
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <strong>ШАГ 1: Создание "Убойного" продукта и бренда</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#strategyAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Идея:</strong> Наборы для холодного воронения стали "ТИТАН".</p>
+                            <p><strong>Концепция:</strong> Мы не просто перепродаем чужой товар, а создаем собственный продукт через комплектацию и брендирование. Пока конкуренты продают "просто бутылочку", мы предлагаем <strong>полное решение "под ключ"</strong>.</p>
+                            <h6>Состав набора "ТИТАН":</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item">✔️ Раствор для холодного воронения (50 мл)</li>
+                                <li class="list-group-item">✔️ Профессиональный обезжириватель (50 мл)</li>
+                                <li class="list-group-item">✔️ Нейтральное оружейное масло (50 мл)</li>
+                                <li class="list-group-item">✔️ Комплект (перчатки, ватные тампоны)</li>
+                                <li class="list-group-item">✔️ Стильная упаковка и подробная инструкция</li>
+                              </ul>
+                              <p class="mt-3"><strong>Ценность для клиента:</strong> Ему не нужно ничего искать дополнительно. Мы подумали за него. Это создает премиальное восприятие продукта и оправдывает цену.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                           <strong>ШАГ 2: Расчет себестоимости (COGS) для MVP-партии 50 наборов</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#strategyAccordion">
+                        <div class="accordion-body">
+                             <h5>Бюджет на закупку: ~8 900 ₽</h5>
+                             <p>Расчет показывает, что себестоимость одного набора составляет около <strong>180 рублей</strong>. Это обеспечивает огромный потенциал для наценки.</p>
+                             <div class="table-responsive">
+                                <table class="table table-sm table-striped">
+                                    <thead><tr><th>Компонент</th><th>Описание</th><th>Стоимость на 50 наборов</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Раствор для воронения</td><td>Закупка 5л канистры у производителя</td><td>2 500 ₽</td></tr>
+                                        <tr><td>Обезжириватель</td><td>Промышленный, 5л</td><td>1 000 ₽</td></tr>
+                                        <tr><td>Нейтральное масло</td><td>Промышленное, 5л</td><td>1 250 ₽</td></tr>
+                                        <tr><td>Флаконы ПЭТ (150 шт)</td><td>По 50 мл с крышками</td><td>1 200 ₽</td></tr>
+                                        <tr><td>Упаковочные коробки (50 шт)</td><td>Крафтовые, стильные</td><td>1 250 ₽</td></tr>
+                                        <tr><td>Комплектующие</td><td>Перчатки, ватные палочки</td><td>500 ₽</td></tr>
+                                        <tr><td>Этикетки</td><td>Печать на термопринтере</td><td>200 ₽</td></tr>
+                                        <tr><td>Прочие расходы</td><td>Доставка компонентов</td><td>500 ₽</td></tr>
+                                        <tr class="table-group-divider"><td><strong>Итого себестоимость (1 набор)</strong></td><td><strong>8 900 ₽ / 50 шт.</strong></td><td><strong>~178 ₽</strong></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                           <strong>ШАГ 3: Юнит-экономика на Ozon и расчет прибыли</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#strategyAccordion">
+                        <div class="accordion-body">
+                             <h5>Цена продажи: 890 ₽. Рентабельность: 31.5%</h5>
+                             <p>Финансовая модель показывает, что даже с учетом всех комиссий и налогов, бизнес является высокоприбыльным. "Казначей" будет доволен.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm unit-table">
+                                    <thead><tr><th>Показатель</th><th>Расчет</th><th>Сумма</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Розничная цена</td><td></td><td class="profit-value">890 ₽</td></tr>
+                                        <tr class="table-group-divider"><td><strong>Расходы:</strong></td><td></td><td></td></tr>
+                                        <tr><td>Комиссия Ozon</td><td>23% от цены</td><td class="loss-value">-205 ₽</td></tr>
+                                        <tr><td>Эквайринг</td><td>1.5% от цены</td><td class="loss-value">-13 ₽</td></tr>
+                                        <tr><td>Фулфилмент (FBO)</td><td>Сборка и магистраль</td><td class="loss-value">-110 ₽</td></tr>
+                                        <tr><td>Последняя миля</td><td>5.5% от цены</td><td class="loss-value">-49 ₽</td></tr>
+                                        <tr><td>Налог (УСН "Доходы")</td><td>6% от цены</td><td class="loss-value">-53 ₽</td></tr>
+                                        <tr><td>Себестоимость (COGS)</td><td>Из шага 2</td><td class="loss-value">-180 ₽</td></tr>
+                                        <tr class="table-group-divider"><td><strong>Чистая прибыль (1 набор)</strong></td><td><strong>Выручка - Расходы</strong></td><td class="profit-value"><strong>280 ₽</strong></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                           <strong>ШАГ 4: Стратегия выхода на рынок (взлом проблемы "курицы и яйца")</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#strategyAccordion">
+                        <div class="accordion-body">
+                            <h5>Задача: Получить первые 10-15 отзывов.</h5>
+                            <p>Новый товар без отзывов невидим для покупателей. Эту проблему нужно решить целенаправленно.</p>
+                            <ol>
+                                <li><strong>Самовыкупы.</strong> Первые 10-15 наборов нужно продать "своим" (друзья, знакомые из релевантных кругов) или через Avito по себестоимости.</li>
+                                <li><strong>Условие.</strong> Продажа со скидкой осуществляется с одной просьбой: заказать товар на Ozon (по ссылке) и оставить честный, развернутый отзыв с фотографиями после получения.</li>
+                                <li><strong>Результат.</strong> Вы инвестируете небольшую сумму в получение самого ценного актива — социального доказательства. С 10+ отзывами ваша карточка товара начнет получать органические показы и продажи.</li>
+                            </ol>
+                            <div class="alert alert-warning" role="alert">
+                              <strong>Внимание:</strong> Убедитесь, что вы знаете все правила Ozon относительно самовыкупов, чтобы избежать блокировок.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="card mt-4 border-success">
+        <div class="card-header bg-success text-white">
+            Заключение и Немедленные Действия
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Что все это значит?</h5>
+            <p class="card-text">Ваш инстинкт вас не подвел. Идея с товарным бизнесом не только жизнеспособна, но и, при правильном подходе, высокорентабельна. Вы не просто будете перепродавать товар, а создадите ценность, решив проблему клиента "под ключ". Это реальный, осязаемый производственный бизнес в миниатюре, который идеально ложится на ваш склад ума и текущую ситуацию.</p>
+            <h6>Ваши следующие шаги:</h6>
+             <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-action"><strong>1. Регистрация ИП:</strong> Начать процесс онлайн через банк (1-3 дня).</li>
+                <li class="list-group-item list-group-item-action"><strong>2. Поиск поставщиков:</strong> Запросить оптовые прайсы и, главное, <strong>копии СГР</strong> (Свидетельство о гос. регистрации) на компоненты.</li>
+                <li class="list-group-item list-group-item-action"><strong>3. Закупка MVP-партии:</strong> Сформировать и оплатить заказ на первые 50 наборов.</li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    // --- REVENUE CHART ---
+    const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+    const revenueChart = new Chart(revenueCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Sto Percent', 'NANOPROTECH', 'ARMAX', 'NEO elements', 'НПФ АКСИОМА'],
+            datasets: [{
+                label: 'Выручка за 30 дней, ₽',
+                // Data from your file: 241302 + 180426, 206488, 276665, etc. Aggregated.
+                data: [421728, 206488, 77965, 74817, 54288], 
+                backgroundColor: 'rgba(0, 123, 255, 0.7)',
+                borderColor: 'rgba(0, 123, 255, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return (value / 1000) + ' тыс. ₽';
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+
+    // --- MARKET SHARE CHART ---
+    const marketShareCtx = document.getElementById('marketShareChart').getContext('2d');
+    const marketShareChart = new Chart(marketShareCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Топ-3 бренда', 'Остальные продавцы'],
+            datasets: [{
+                label: 'Доля рынка',
+                // Calculated from your data: Top brands revenue vs total
+                data: [68, 32], 
+                backgroundColor: [
+                    'rgba(0, 123, 255, 0.7)',
+                    'rgba(200, 200, 200, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(0, 123, 255, 1)',
+                    'rgba(200, 200, 200, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed !== null) {
+                                label += context.parsed + '%';
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>

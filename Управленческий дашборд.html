@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управленческий дашборд: Финансовое состояние и точки роста</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .report-header {
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,114,255,1) 100%);
+            color: white;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+        }
+        .card-header {
+            font-weight: bold;
+            background-color: #f8f9fa;
+        }
+        .kpi-card {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-left: 5px solid #0d6efd;
+            padding: 1rem;
+            border-radius: 0.3rem;
+            margin-bottom: 1rem;
+        }
+        .kpi-card .value {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+        .kpi-card .trend.positive { color: #198754; }
+        .kpi-card .trend.negative { color: #dc3545; }
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-5">
+
+    <div class="report-header">
+        <h1>Управленческий дашборд</h1>
+        <p class="lead">Финансовое состояние и точки роста за 2-й квартал 2025 года</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="kpi-card">
+                <div class="title">Чистый денежный поток (Q2)</div>
+                <div class="value text-primary">+2 533 203 ₽</div>
+                <div class="trend positive">Значительный рост в июне</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="kpi-card" style="border-left-color: #198754;">
+                <div class="title">Накопленная прибыль (на 30.06)</div>
+                <div class="value" style="color: #198754;">3 723 009 ₽</div>
+                <div class="trend positive">Стабильный рост</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="kpi-card" style="border-left-color: #ffc107;">
+                <div class="title">Оборачиваемость WB (дни)</div>
+                <div class="value" style="color: #ffc107;">44</div>
+                <div class="trend positive">Высокая эффективность</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-lg-7">
+            <div class="card h-100">
+                <div class="card-header">Динамика выручки и чистой прибыли (Q2 2025)</div>
+                <div class="card-body">
+                    <canvas id="revenueProfitChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card">
+                         <div class="card-header">Рентабельность по валовой прибыли (%)</div>
+                         <div class="card-body">
+                            <canvas id="grossMarginChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">Структура выручки (Июнь 2025)</div>
+                        <div class="card-body">
+                            <canvas id="channelShareChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion" id="detailsAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePnl">
+                    <strong>Отчет о прибылях и убытках (P&L) - Детализация</strong>
+                </button>
+            </h2>
+            <div id="collapsePnl" class="accordion-collapse collapse show" data-bs-parent="#detailsAccordion">
+                <div class="accordion-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Показатель</th>
+                                    <th>Апрель 2025</th>
+                                    <th>Май 2025</th>
+                                    <th>Июнь 2025</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Выручка</strong></td><td>2 156 932</td><td>2 333 986</td><td>2 087 551</td></tr>
+                                <tr><td><strong>Прямые затраты</strong></td><td>1 222 645</td><td>1 278 645</td><td>1 136 228</td></tr>
+                                <tr><td><strong>Валовая прибыль</strong></td><td>934 288</td><td>1 055 341</td><td>951 323</td></tr>
+                                <tr><td>Переменные общие расходы</td><td>266 959</td><td>288 002</td><td>260 690</td></tr>
+                                <tr><td>Постоянные расходы</td><td>233 430</td><td>289 258</td><td>238 391</td></tr>
+                                <tr><td><strong>Операционная прибыль (EBITDA)</strong></td><td>433 899</td><td>478 081</td><td>452 242</td></tr>
+                                <tr><td><strong>Чистая прибыль</strong></td><td>377 940</td><td>423 766</td><td>402 398</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCashflow">
+                    <strong>Анализ движения денежных средств (Cash Flow)</strong>
+                </button>
+            </h2>
+            <div id="collapseCashflow" class="accordion-collapse collapse" data-bs-parent="#detailsAccordion">
+                <div class="accordion-body">
+                    <ul>
+                        <li><strong>Апрель 2025:</strong> Поступления: 3 008 300 ₽, Выплаты: 1 803 720 ₽, <strong>Чистый поток: +1 204 580 ₽</strong></li>
+                        <li><strong>Май 2025:</strong> Поступления: 1 234 794 ₽, Выплаты: 1 033 295 ₽, <strong>Чистый поток: +201 499 ₽</strong></li>
+                        <li><strong>Июнь 2025:</strong> Поступления: 1 721 478 ₽, Выплаты: 594 354 ₽, <strong>Чистый поток: +1 127 124 ₽</strong></li>
+                    </ul>
+                    <p class="fw-bold mt-3">Квартальный чистый денежный поток: +2 533 203 ₽</p>
+                    <p class="small text-muted"><strong>Примечание:</strong> Значительные внутренние перемещения средств между счетами отражают управление ликвидностью. Ключевые внешние выплаты: закуп товара и погашение кредитов (~290 тыс. ₽ в апреле и июне).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOps">
+                    <strong>Операционные метрики и точки роста</strong>
+                </button>
+            </h2>
+            <div id="collapseOps" class="accordion-collapse collapse" data-bs-parent="#detailsAccordion">
+                <div class="accordion-body">
+                    <h5>Ключевые выводы</h5>
+                    <ul>
+                        <li><strong>Финансовая устойчивость:</strong> Компания стабильно прибыльна, накапливает капитал.</li>
+                        <li><strong>Зависимость от WB:</strong> Доля Wildberries в выручке растет (до 82%), в то время как доля Ozon падает (до 17%). Это создает риски.</li>
+                        <li><strong>Эффективность затрат:</strong> Улучшение рентабельности по валовой прибыли - позитивный знак. Однако рост ДРР (доли рекламных расходов) на обоих маркетплейсах требует внимания.</li>
+                    </ul>
+                    <h5 class="mt-4">Точки роста для обсуждения</h5>
+                    <ol>
+                        <li><strong>Оптимизация рекламы:</strong> Провести аудит рекламных кампаний на WB и Ozon для снижения ДРР. Проанализировать причины низкого CTR (0.84%) на Ozon.</li>
+                        <li><strong>Развитие Ozon и Яндекс Маркет:</strong> Разработать стратегию для остановки падения продаж на Ozon. Оценить целесообразность инвестиций в Яндекс Маркет.</li>
+                        <li><strong>Контроль постоянных расходов:</strong> Проанализировать причины скачка постоянных расходов в мае (рост на 24%).</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseChrono">
+                    <strong>Хронология операций и персонажи</strong>
+                </button>
+            </h2>
+            <div id="collapseChrono" class="accordion-collapse collapse" data-bs-parent="#detailsAccordion">
+                <div class="accordion-body">
+                    <p>Ниже представлена детальная хронология финансовых операций, которая использовалась для анализа. Это объемный лог, полезный для углубленного изучения.</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#chronoModal">
+                      Показать детальную хронологию
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="chronoModal" tabindex="-1" aria-labelledby="chronoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="chronoModalLabel">Хронология основных событий</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="small">Данные представлены для контекста и детального анализа. Здесь перечислены транзакции с июня 2024 по март 2025.</p>
+        <h6>Июнь 2024</h6>
+        <p class="small">03.06.2024: Выплачена зарплата Беллы (менеджер Ozon) за май (12 500). Переведены зарплаты Артёму на Сбербанк (42 000). Поступления от Терминал сервис (24 443) и РВБ (167 949)...</p>
+        <h6>Июль 2024</h6>
+        <p class="small">01.07.2024: Поступления от Терминал сервис (1 001). Расход на посторонний Б (3 006). 02.07.2024: Выплачены зарплаты менеджерам: ПВЗ (Ралия, 12 500), Ozon (Белла, 12 500), ВБ (Анна, 17 500)...</p>
+        <p>... и так далее.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Chart 1: Revenue & Profit
+    const revenueProfitCtx = document.getElementById('revenueProfitChart').getContext('2d');
+    new Chart(revenueProfitCtx, {
+        type: 'line',
+        data: {
+            labels: ['Апрель 2025', 'Май 2025', 'Июнь 2025'],
+            datasets: [{
+                label: 'Выручка (руб)',
+                data: [2156932, 2333986, 2087551],
+                borderColor: 'rgba(25, 135, 84, 1)',
+                backgroundColor: 'rgba(25, 135, 84, 0.1)',
+                yAxisID: 'y',
+                tension: 0.1
+            }, {
+                label: 'Чистая прибыль (руб)',
+                data: [377940, 423766, 402398],
+                borderColor: 'rgba(13, 110, 253, 1)',
+                backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                yAxisID: 'y',
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: { y: { beginAtZero: true } }
+        }
+    });
+
+    // Chart 2: Gross Margin
+    const grossMarginCtx = document.getElementById('grossMarginChart').getContext('2d');
+    new Chart(grossMarginCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Апрель 2025', 'Май 2025', 'Июнь 2025'],
+            datasets: [{
+                label: 'Рентабельность по валовой прибыли (%)',
+                data: [43, 45, 46],
+                backgroundColor: [
+                    'rgba(255, 193, 7, 0.7)',
+                    'rgba(255, 193, 7, 0.8)',
+                    'rgba(255, 193, 7, 0.9)'
+                ],
+                borderColor: 'rgba(255, 193, 7, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true, max: 50 } }
+        }
+    });
+
+    // Chart 3: Channel Share
+    const channelShareCtx = document.getElementById('channelShareChart').getContext('2d');
+    new Chart(channelShareCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Wildberries', 'Ozon', 'Яндекс Маркет'],
+            datasets: [{
+                label: 'Доля в выручке',
+                data: [82, 17, 1],
+                backgroundColor: [
+                    'rgba(13, 110, 253, 0.8)',
+                    'rgba(25, 135, 84, 0.8)',
+                    'rgba(255, 193, 7, 0.8)'
+                ],
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+        }
+    });
+});
+</script>
+
+</body>
+</html>
