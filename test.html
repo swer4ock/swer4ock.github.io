@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>⚙️ Свяжи n8n и OpenAI за 30 минут — запусти ИИ-агента для Авито!</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Typography & Base */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    /* Header Gradient */
+    .bg-gradient-primary {
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+    }
+    .bg-gradient-secondary {
+      background: linear-gradient(135deg, #6610f2, #0d6efd);
+    }
+
+    /* Cards */
+    .card {
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Testimonials */
+    .blockquote {
+      background: #f8f9fa;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 767px) {
+      .display-4 {
+        font-size: 2.5rem;
+      }
+    }
+    @media (min-width: 768px) {
+      .lead {
+        font-size: 1.25rem;
+      }
+    }
+
+    /* Utility enhancements */
+    .text-gradient {
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Footer */
+    footer {
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- Header -->
+  <header class="bg-gradient-primary text-white py-5">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold">⚙️ Свяжи n8n и OpenAI за 30 минут — запусти ИИ-агента для Авито!</h1>
+      <p class="lead mt-3">Готовые сценарии и пошаговая инструкция для запуска умного ИИ-агента<br>Увеличь продажи и автоматизируй общение с клиентами.</p>
+      <a href="https://t.me/agentproductsgobot?start=header" class="btn btn-light btn-lg mt-4">👉 Забрать гайд в Telegram</a>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row gy-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-3">
+            <i class="bi bi-clock-fill display-4 text-primary"></i>
+            <h4 class="mt-2">30 минут</h4>
+            <p class="mb-0">Запуск без технических знаний</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3">
+            <i class="bi bi-graph-up-arrow display-4 text-primary"></i>
+            <h4 class="mt-2">+40% заявок</h4>
+            <p class="mb-0">За первые 2 недели</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3">
+            <i class="bi bi-shield-lock-fill display-4 text-primary"></i>
+            <h4 class="mt-2">Гарантия</h4>
+            <p class="mb-0">Вернём деньги, если не работает</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3">
+            <i class="bi bi-people-fill display-4 text-primary"></i>
+            <h4 class="mt-2">120+ пользователей</h4>
+            <p class="mb-0">Авитологи и предприниматели</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">Выбери свой пакет</h2>
+      <div class="row gy-4 justify-content-center">
+        <!-- Package 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h4 class="card-title text-center fw-bold mb-3 text-gradient">Авто‑объявления</h4>
+              <p class="small text-center mb-4">Максимум объявлений на Avito без ручной работы — только автозагрузка XML.</p>
+              <ul class="list-unstyled small mb-4">
+                <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> PDF‑гайд (5 стр.)</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> Видео 10 минут</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> Шаблон XML‑фида</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> Запуск за 30 минут</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> Гарантия результата</li>
+              </ul>
+              <div class="mt-auto text-center">
+                <!-- <h3 class="fw-bold mb-3">2 990 ₽</h3> -->
+                <a href="https://t.me/agentproductsgobot?start=auto_xml" class="btn btn-primary w-100">Забрать в Telegram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Package 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-lg position-relative">
+            <span class="badge bg-warning position-absolute top-0 end-0 translate-middle-y me-3 mt-3">Хит!</span>
+            <div class="card-body d-flex flex-column">
+              <h4 class="card-title text-center fw-bold mb-3 text-gradient">ИИ‑продавец</h4>
+              <p class="small text-center mb-4">Полная автоматизация: автозагрузка + умный ИИ‑агент на n8n & OpenAI, который отвечает и продаёт за вас.</p>
+              <ul class="list-unstyled small mb-4">
+                <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> Всё из «Авто‑объявления»</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> JSON‑workflow для n8n</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> 10 готовых промптов ChatGPT</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> Рост заявок до 40% за 2 недели</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> Поддержка Telegram‑чата 7 дней</li>
+              </ul>
+              <div class="mt-auto text-center">
+                <!-- <h3 class="fw-bold mb-3">4 990 ₽</h3> -->
+                <a href="https://t.me/agentproductsgobot?start=ai_seller" class="btn btn-success w-100">Забрать в Telegram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cases -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4">Реальные кейсы</h2>
+      <div class="row gy-4">
+        <!-- Кейс: Магазин электроники -->
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div style="height: 350px; overflow: hidden;">
+              <img src="be66fc2cf4503b0faca775507c7bd6ce0b9d73702817a61417e7460823c411d6.png" class="card-img-top" alt="Кейс: Магазин электроники" style="object-fit: cover; height: 500px; margin-top: -100px;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Кейс: Магазин электроники</h5>
+              <p class="card-text">Рост обращений на 50% за первую неделю использования ИИ-агента.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Кейс: Автосервис -->
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div style="height: 350px; overflow: hidden;">
+              <img src="690b876b75594b6966ee51d8f4333bbfc48e80971e20f1ac004fbe1455d625cd.png" class="card-img-top" alt="Кейс: Автосервис" style="object-fit: cover; height: 500px; margin-top: -100px;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Кейс: Автосервис</h5>
+              <p class="card-text">ИИ помогает отвечать клиентам, сокращая время ответа втрое. Количество заказов выросло на 35%.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Кому подойдет -->
+      <h2 class="text-center fw-bold mb-4 mt-5">Кому подойдет</h2>
+      <div class="row gy-4">
+        <!-- Кейс 1 -->
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div style="height: 350px; overflow: hidden;">
+              <img src="135ede1c59246a3b800069a6a12c811f7cb2b7824293c96c4c2a98acef262151.png" class="card-img-top" alt="Кейс 1" style="object-fit: cover; height: 500px; margin-top: -100px;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">👉 Сценарий: автоответы на частые вопросы, обработка входящих 24/7</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Кейс 2 -->
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div style="height: 350px; overflow: hidden;">
+              <img src="1606127cf8d18d5e90d6a062cc9e7871324a24c95b90749144015d751439f229.png" class="card-img-top" alt="Кейс 2" style="object-fit: cover; height: 500px; margin-top: -100px;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">👉 Сценарий: ИИ вежливо общается, уточняет детали, фильтрует мусорные запросы.</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Кейс 3 -->
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div style="height: 350px; overflow: hidden;">
+              <img src="e0a671f6ec6952a85bbb34b24ebbd3cd8b6dd0714d46951c4c34e5f4b56ea68b.png" class="card-img-top" alt="Кейс 3" style="object-fit: cover; height: 500px; margin-top: -100px;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">👉 Сценарий: готовый агент + CRM-связка, запуск за 30 минут.</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Кейс 4 -->
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div style="height: 350px; overflow: hidden;">
+              <img src="f6638ba4f4e7f1bd7babcd49d6a8c6af37e35f963c9364c7a18e72b22da34925.png" class="card-img-top" alt="Кейс 4" style="object-fit: cover; height: 500px; margin-top: -100px;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">👉 Сценарий: всё через Telegram, без кода, простой запуск по гайду.</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Кейс 5 -->
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div style="height: 350px; overflow: hidden;">
+              <img src="f3c90008ae44b0829ce85c621d6751d497663f2fdb62f6ddca020981d2adb0be.png" class="card-img-top" alt="Кейс 5" style="object-fit: cover; height: 500px; margin-top: -100px;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">👉 Сценарий: ИИ уточняет поломку, записывает данные, передаёт мастеру.</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Кейс 6 -->
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div style="height: 350px; overflow: hidden;">
+              <img src="c677c6498254eda0c761fc25d67ed9f7c27ecc9b40d60f57f17f3b26ed50e01c.png" class="card-img-top" alt="Кейс 6" style="object-fit: cover; height: 500px; margin-top: -100px;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">👉 Сценарий: автоответ + приветствие, впечатление солидности</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4">Отзывы наших клиентов</h2>
+      <div class="row gy-4">
+        <div class="col-12 col-md-4">
+          <blockquote class="blockquote p-4 border-start border-4 border-primary rounded">
+            <p class="mb-2">"Абсолютно преобразило мою работу с Авито! Клиенты стали получать ответы мгновенно."</p>
+            <footer class="blockquote-footer mt-2">Ирина П., <cite title="Source Title">Авитолог</cite></footer>
+          </blockquote>
+        </div>
+        <div class="col-12 col-md-4">
+          <blockquote class="blockquote p-4 border-start border-4 border-primary rounded">
+            <p class="mb-2">"Невероятная простота и эффективность. Запустил за 20 минут!"</p>
+            <footer class="blockquote-footer mt-2">Алексей С., <cite title="Source Title">Предприниматель</cite></footer>
+          </blockquote>
+        </div>
+        <div class="col-12 col-md-4">
+          <blockquote class="blockquote p-4 border-start border-4 border-primary rounded">
+            <p class="mb-2">"Поддержка на высоте, кейсы реально работают."</p>
+            <footer class="blockquote-footer mt-2">Ольга Т., <cite title="Source Title">Маркетолог</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-5 bg-gradient-secondary text-white text-center">
+    <div class="container">
+      <h3 class="fw-bold mb-3">Готовы начать?</h3>
+      <p class="mb-4">Осталось всего 7 гайдов. Успейте получить!</p>
+      <a href="https://t.me/agentproductsgobot?start=cta_banner" class="btn btn-lg btn-light">Заберу в Telegram</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-dark text-light py-4">
+    <div class="container text-center">
+      <p class="mb-1">© 2025 Авито ИИ-Агент. Все права защищены.</p>
+      <small>Сайт разработан с любовью на Bootstrap 5 & Vue 3 (при необходимости).</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
