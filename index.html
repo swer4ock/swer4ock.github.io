@@ -5,20 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Марсель С. — Архитектор Бизнес-Автоматизации</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Анимированный фон -->
+    <div class="animated-bg">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+    </div>
+    
     <div class="container">
-        <header>
-            <h1>Марсель С. — Архитектор Бизнес-Автоматизации</h1>
-            <p>Превращаю хаос в систему, а данные — в деньги. Здесь собраны мои ключевые кейсы и проекты.</p>
+        <header class="hero-header">
+            <div class="hero-content">
+                <div class="profile-section">
+                    <div class="avatar-container">
+                        <div class="avatar">🚀</div>
+                        <div class="status-indicator"></div>
+                    </div>
+                    <div class="hero-text">
+                        <h1 class="glitch-text">Марсель С.</h1>
+                        <h2 class="subtitle">Архитектор Бизнес-Автоматизации</h2>
+                        <p class="hero-description">Превращаю хаос в систему, а данные — в деньги. Здесь собраны мои ключевые кейсы и проекты.</p>
+                        <div class="stats-bar">
+                            <div class="stat-item">
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Проектов</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Года опыта</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Автоматизации</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
 
+        <nav class="filter-nav">
+            <button class="filter-btn active" data-filter="all">🎯 Все проекты</button>
+            <button class="filter-btn" data-filter="ai">🤖 ИИ & Автоматизация</button>
+            <button class="filter-btn" data-filter="analytics">📊 Аналитика</button>
+            <button class="filter-btn" data-filter="business">💼 Бизнес</button>
+        </nav>
+
         <main class="portfolio-grid">
-            <div class="card">
+            <div class="card" data-category="ai">
+                <div class="card-header">
+                    <div class="card-icon">🤖</div>
+                    <div class="card-badge">ИИ</div>
+                </div>
                 <div class="card-content">
                     <h2>Как ИИ помогает вашему бизнесу</h2>
                     <p>Обзорная статья о том, как искусственный интеллект решает реальные бизнес-задачи, от автоматизации лидов до оптимизации внутренних процессов.</p>
-                    <a href="Как ИИ помогает вашему бизнесу.html" target="_blank">Смотреть</a>
+                    <div class="card-footer">
+                        <a href="Как ИИ помогает вашему бизнесу.html" target="_blank" class="btn-primary">Смотреть кейс</a>
+                        <div class="card-meta">
+                            <span class="views">👁 2.1k</span>
+                            <span class="date">2024</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
