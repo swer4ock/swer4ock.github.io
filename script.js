@@ -77,6 +77,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
+
+    // Загрузка отзывов из JSON
+    fetch('testimonials.json')
+        .then(response => response.json())
+        .then(testimonials => {
+            const container = document.getElementById('testimonials-container');
+            testimonials.forEach(t => {
+                const card = document.createElement('div');
+                card.className = 'testimonial-card';
+                card.innerHTML = `
+                    <p class="testimonial-text">"${t.text}"</p>
+                    <p class="testimonial-author">— ${t.name}</p>
+                `;
+                container.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Ошибка загрузки отзывов:', error));
 });
 
 // Плавная прокрутка к секциям
