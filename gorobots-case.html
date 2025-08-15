@@ -301,9 +301,9 @@ from dotenv import load_dotenv
 from telethon import TelegramClient, events
 
 # Инициализация Telegram клиента
-API_ID = int(os.getenv("TELEGRAM_API_ID"))
-API_HASH = os.getenv("TELEGRAM_API_HASH")
-SESSION_NAME = os.getenv("TELEGRAM_SESSION_NAME")
+API_ID = int(os.getenv("YOUR_TELEGRAM_API_ID"))
+API_HASH = os.getenv("YOUR_TELEGRAM_API_HASH")
+SESSION_NAME = os.getenv("YOUR_TELEGRAM_SESSION_NAME")
 
 # Proxy конфигурация
 proxy = None
@@ -321,7 +321,7 @@ client = TelegramClient(SESSION_NAME, API_ID, API_HASH, proxy=proxy)
 
 # FastAPI приложение
 app = FastAPI()
-MCP_API_KEY = os.getenv("MCP_API_KEY", "")</div>
+MCP_API_KEY = os.getenv("YOUR_MCP_API_KEY", "")</div>
         </div>
 
         <div class="content-grid">
@@ -379,10 +379,10 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - TELEGRAM_API_ID=${TELEGRAM_API_ID}
-      - TELEGRAM_API_HASH=${TELEGRAM_API_HASH}
-      - TELEGRAM_SESSION_NAME=${TELEGRAM_SESSION_NAME}
-      - MCP_API_KEY=${MCP_API_KEY}
+      - TELEGRAM_API_ID=${YOUR_TELEGRAM_API_ID}
+      - TELEGRAM_API_HASH=${YOUR_TELEGRAM_API_HASH}
+      - TELEGRAM_SESSION_NAME=${YOUR_TELEGRAM_SESSION_NAME}
+      - MCP_API_KEY=${YOUR_MCP_API_KEY}
       - TG_PROXY_HOST=${TG_PROXY_HOST}
       - TG_PROXY_PORT=${TG_PROXY_PORT}
     volumes:

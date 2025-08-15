@@ -398,7 +398,7 @@ function myapp_display_admin_page() {
             <h3 style="margin-top: 30px;">Пример API интеграции:</h3>
             <div class="code-block">// Получение сборочных заданий с WB
 function get_wb_orders() {
-    $api_key = get_option('wb_api_key');
+    $api_key = get_option('YOUR_WB_API_KEY');
     $url = 'https://suppliers-api.wildberries.ru/api/v3/orders/new';
     
     $headers = [
@@ -426,7 +426,7 @@ function get_wb_orders() {
 
 // Создание поставки
 function create_supply($name) {
-    $api_key = get_option('wb_api_key');
+    $api_key = get_option('YOUR_WB_API_KEY');
     $url = 'https://suppliers-api.wildberries.ru/api/v3/supplies';
     
     $data = json_encode(['name' => $name]);
