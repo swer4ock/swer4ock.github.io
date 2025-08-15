@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiGolos Bot - Финансовый коуч-бот</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-card h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon {
+            font-size: 1.2em;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .full-width-card {
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+            margin: 20px 0;
+            white-space: pre-line;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="badge">💰 AI Assistant</div>
+            <h1>AiGolos Bot</h1>
+            <p class="subtitle">Финансовый коуч-бот на базе GPT-4 для Telegram</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">GPT-4</span>
+                <div class="stat-label">AI Model</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">Telegram</span>
+                <div class="stat-label">Platform</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">OpenAI</span>
+                <div class="stat-label">API Provider</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">24/7</span>
+                <div class="stat-label">Availability</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h2><span class="icon">🎯</span>Проблема</h2>
+                <p>Многие люди нуждаются в персональном финансовом консультанте, но услуги профессиональных коучей дороги и недоступны 24/7.</p>
+                
+                <h3 style="margin-top: 30px; color: #e74c3c;">Вызовы:</h3>
+                <ul class="features-list">
+                    <li><span class="check-icon">❌</span>Высокая стоимость финансовых консультантов</li>
+                    <li><span class="check-icon">❌</span>Ограниченная доступность экспертов</li>
+                    <li><span class="check-icon">❌</span>Стеснение обсуждать финансовые проблемы</li>
+                    <li><span class="check-icon">❌</span>Необходимость быстрых решений</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2><span class="icon">💡</span>Решение</h2>
+                <p>Создан ИИ-бот финансовый коуч на базе GPT-4, доступный в Telegram 24/7 для персональных консультаций по финансовым вопросам.</p>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Telegram Bot API</span>
+                    <span class="tech-tag">OpenAI GPT-4</span>
+                    <span class="tech-tag">AsyncIO</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-width-card">
+            <h2><span class="icon">🔧</span>Техническая реализация</h2>
+            
+            <h3>Архитектура бота:</h3>
+            <ul class="features-list">
+                <li><span class="check-icon">✅</span><strong>Telegram Bot API:</strong> Интерфейс для взаимодействия с пользователями</li>
+                <li><span class="check-icon">✅</span><strong>OpenAI GPT-4:</strong> Обработка запросов и генерация ответов</li>
+                <li><span class="check-icon">✅</span><strong>Системный промпт:</strong> Специализация на финансовом коучинге</li>
+                <li><span class="check-icon">✅</span><strong>Async обработка:</strong> Параллельная обработка множества запросов</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">Основной код бота:</h3>
+            <div class="code-block">import os
+import logging
+from telegram import Update
+from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext
+import openai
+
+# Системный промпт финансового коуча
+system_prompt = (
+    "Ты — профессиональный финансовый коуч, эксперт в решении денежных вопросов. "
+    "Твоя задача — помочь пользователю быстро разобраться в его финансовой ситуации "
+    "и предложить краткие, точные и практичные решения для улучшения его благосостояния. "
+    "Ты всегда анализируешь проблему с позиции прагматизма и реальных возможностей, "
+    "даёшь чёткие, конкретные шаги, которые можно применить сразу, "
+    "мотивируешь действовать уверенно и без промедления."
+)
+
+async def handle_message(update: Update, context: CallbackContext) -> None:
+    user_message = update.message.text
+    
+    # Отправляем запрос в OpenAI
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_message},
+        ]
+    )
+    
+    bot_reply = response.choices[0].message.content
+    await update.message.reply_text(bot_reply)</div>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h2><span class="icon">🧠</span>ИИ-возможности</h2>
+                
+                <h3>💼 Финансовое планирование</h3>
+                <ul class="features-list">
+                    <li><span class="check-icon">✅</span>Составление личного бюджета</li>
+                    <li><span class="check-icon">✅</span>Планирование крупных покупок</li>
+                    <li><span class="check-icon">✅</span>Стратегии накопления</li>
+                    <li><span class="check-icon">✅</span>Оптимизация расходов</li>
+                </ul>
+
+                <h3>📈 Инвестиционные советы</h3>
+                <ul class="features-list">
+                    <li><span class="check-icon">✅</span>Базовые принципы инвестирования</li>
+                    <li><span class="check-icon">✅</span>Диверсификация портфеля</li>
+                    <li><span class="check-icon">✅</span>Управление рисками</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2><span class="icon">⚡</span>Преимущества</h2>
+                
+                <h3>🕐 Доступность 24/7</h3>
+                <ul class="features-list">
+                    <li><span class="check-icon">✅</span>Мгновенные ответы на вопросы</li>
+                    <li><span class="check-icon">✅</span>Нет очередей и записи</li>
+                    <li><span class="check-icon">✅</span>Работает в любое время</li>
+                </ul>
+
+                <h3>💰 Экономическая эффективность</h3>
+                <ul class="features-list">
+                    <li><span class="check-icon">✅</span>Бесплатные консультации</li>
+                    <li><span class="check-icon">✅</span>Неограниченное количество вопросов</li>
+                    <li><span class="check-icon">✅</span>Персонализированные советы</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="full-width-card">
+            <h2><span class="icon">🎨</span>Пользовательский опыт</h2>
+            
+            <div class="content-grid" style="margin-top: 20px;">
+                <div>
+                    <h3>📱 Простота использования</h3>
+                    <ul class="features-list">
+                        <li><span class="check-icon">✅</span>Интуитивный интерфейс Telegram</li>
+                        <li><span class="check-icon">✅</span>Команда /start для начала</li>
+                        <li><span class="check-icon">✅</span>Естественное общение</li>
+                        <li><span class="check-icon">✅</span>Быстрые ответы</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🎯 Персонализация</h3>
+                    <ul class="features-list">
+                        <li><span class="check-icon">✅</span>Адаптация под ситуацию пользователя</li>
+                        <li><span class="check-icon">✅</span>Уточняющие вопросы</li>
+                        <li><span class="check-icon">✅</span>Конкретные рекомендации</li>
+                        <li><span class="check-icon">✅</span>Мотивационная поддержка</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px;">Примеры вопросов, которые решает бот:</h3>
+            <div class="code-block">• "Как составить семейный бюджет на 50,000 рублей в месяц?"
+• "Стоит ли брать ипотеку или копить на квартиру?"
+• "Как начать инвестировать с суммой 100,000 рублей?"
+• "Как погасить кредиты быстрее?"
+• "Какую сумму откладывать на пенсию?"
+• "Как оптимизировать налоги для ИП?"</div>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h2><span class="icon">📊</span>Результаты</h2>
+                <ul class="features-list">
+                    <li><span class="check-icon">✅</span>Доступный финансовый коучинг для всех</li>
+                    <li><span class="check-icon">✅</span>Мгновенные персонализированные советы</li>
+                    <li><span class="check-icon">✅</span>Снижение барьеров для финансового образования</li>
+                    <li><span class="check-icon">✅</span>Практичные решения для реальных проблем</li>
+                    <li><span class="check-icon">✅</span>Мотивация к финансовым действиям</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2><span class="icon">🚀</span>Перспективы</h2>
+                <ul class="features-list">
+                    <li><span class="check-icon">🔄</span>Интеграция с банковскими API</li>
+                    <li><span class="check-icon">🔄</span>Анализ личных финансов</li>
+                    <li><span class="check-icon">🔄</span>Уведомления и напоминания</li>
+                    <li><span class="check-icon">🔄</span>Групповые финансовые челленджи</li>
+                    <li><span class="check-icon">🔄</span>Интеграция с инвестиционными платформами</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="back-btn">← Вернуться в портфолио</a>
+        </div>
+    </div>
+</body>
+</html>

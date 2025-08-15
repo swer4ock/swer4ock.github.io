@@ -298,8 +298,7 @@
             </ul>
 
             <h3 style="margin-top: 30px;">Структура проекта:</h3>
-            <div class="code-block">
-pumpfun/
+            <div class="code-block">pumpfun/
 ├── main.py                          # FastAPI сервер
 ├── create_token_gpt.py             # Создание токенов
 ├── subscribe_sell_time_btn_v3.py   # Мониторинг и торговля
@@ -308,8 +307,7 @@ pumpfun/
 ├── sniper.py                       # Снайпер новых токенов
 ├── jito-py-rpc/                    # Jito RPC клиент
 ├── idl.json                        # Anchor IDL для PumpFun
-└── keys_test.txt                   # Тестовые кошельки
-            </div>
+└── keys_test.txt                   # Тестовые кошельки</div>
 
             <h3>Ключевые алгоритмы:</h3>
             <div class="content-grid" style="margin-top: 20px;">
@@ -377,8 +375,7 @@ pumpfun/
             <h2><span class="icon">⚙️</span>Технические особенности</h2>
             
             <h3>Пример создания токена:</h3>
-            <div class="code-block">
-# Создание нового токена на PumpFun
+            <div class="code-block"># Создание нового токена на PumpFun
 async def create_token(name: str, symbol: str, description: str, image_url: str):
     # Подготовка метаданных
     metadata = {
@@ -411,12 +408,10 @@ async def create_token(name: str, symbol: str, description: str, image_url: str)
         )
     )
     
-    return tx
-            </div>
+    return tx</div>
 
             <h3>Jito Bundle для MEV-защиты:</h3>
-            <div class="code-block">
-# Отправка bundle через Jito
+            <div class="code-block"># Отправка bundle через Jito
 async def send_jito_bundle(transactions: List[Transaction], tip_amount: int):
     # Добавление tip транзакции
     tip_tx = create_tip_transaction(tip_amount)
@@ -427,8 +422,7 @@ async def send_jito_bundle(transactions: List[Transaction], tip_amount: int):
     # Отправка через Jito RPC
     response = await jito_client.send_bundle(bundle)
     
-    return response
-            </div>
+    return response</div>
         </div>
 
         <div class="content-grid">

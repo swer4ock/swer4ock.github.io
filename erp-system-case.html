@@ -314,8 +314,7 @@
             </div>
 
             <h3>Структура проекта:</h3>
-            <div class="code-block">
-erp_system/
+            <div class="code-block">erp_system/
 ├── core/                    # Основное Django приложение
 │   ├── models.py           # Модели ERP системы
 │   ├── serializers.py      # DRF сериализаторы
@@ -331,8 +330,7 @@ erp_system/
 │   │   ├── views/         # Страницы приложения
 │   │   └── api/           # API клиент (автогенерация)
 │   └── package.json
-└── manage.py              # Django управление
-            </div>
+└── manage.py              # Django управление</div>
         </div>
 
         <div class="content-grid">
@@ -401,8 +399,7 @@ erp_system/
             </div>
 
             <h3 style="margin-top: 30px;">Команды сборки и развертывания:</h3>
-            <div class="code-block">
-# Генерация OpenAPI схемы
+            <div class="code-block"># Генерация OpenAPI схемы
 python manage.py spectacular --file swagger.json
 
 # Автогенерация JavaScript API клиента
@@ -412,8 +409,7 @@ openapi-generator-cli generate -i ./swagger.json -g javascript -o ./src/api
 cd frontend && npm run build
 
 # Развертывание статики
-python manage.py collectstatic
-            </div>
+python manage.py collectstatic</div>
         </div>
 
         <div class="content-grid">
